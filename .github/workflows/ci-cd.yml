@@ -16,8 +16,14 @@ jobs:
             DOCKER_HUB_TOKEN: ${{ secrets.DOCKER_HUB_TOKEN }}
 
         steps:
-            - name: Cloner dépôt
+            # - name: Cloner dépôt
+              # uses: actions/checkout@v3
+  
+            - name: Cloner dépôt (deep checkout)
               uses: actions/checkout@v3
+              with:
+                fetch-depth: 0
+                submodules: recursive
 
             - name: Configurer Python
               uses: actions/setup-python@v4
