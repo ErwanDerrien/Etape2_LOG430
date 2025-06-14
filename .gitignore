@@ -1,2 +1,27 @@
+# Root
+
 .DS_Store
 .vscode/
+
+# Frontend
+/frontend/node_modules
+/frontend/env
+/frontend/package-lock.json
+/frontend/.vscode
+/frontend/.DS_Store
+
+# Backend
+__pycache__
+/backend/.pytest_cache
+/backend/venv
+/backend/env
+bin
+*.db
+/backend/*.sqlite
+/backend/*.sqlite3
+/backend/.vscode
+
+/backend/.DS_Store
+/backend/docs_lab1/.DS_Store
+/backend/docs_lab2/.DS_Store
+/backend/src/.DS_Store
