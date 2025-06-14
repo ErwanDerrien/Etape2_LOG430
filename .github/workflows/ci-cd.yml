@@ -46,10 +46,17 @@ jobs:
                   username: ${{ secrets.DOCKER_HUB_USERNAME }}
                   password: ${{ secrets.DOCKER_HUB_TOKEN }}
 
+            - name: Vérifier la structure des fichiers
+              run: |
+                echo "Structure complète :"
+                ls -R
+                echo "Contenu de backend/docker :"
+                ls -l backend/docker/
+
             - name: Build and push Docker image
               uses: docker/build-push-action@v5
               with:
                   context: ./backend
-                  file: docker/Dockerfile
+                  file: ./docker/Dockerfile
                   push: true
                   tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.IMAGE_NAME }}:latest
